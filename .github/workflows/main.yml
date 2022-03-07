@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Download new CSV file
+name: Download CSV file and update repository CSV files
 
 # Controls when the workflow will run
 on:
@@ -35,9 +35,10 @@ jobs:
         run: mkdir -p ./data/output
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Produce Abruzzo files
         run: |
-          awk -F';' 'BEGIN{OFS=";"; print "ref:mise;name;operator;address;latitude;longitude"} NR>=3 && NF == 10 && $8 ~ /^(CH|PE|AQ|TE)$/{print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/abruzzo_impianti_attivi.csv
+          awk -F';' 'BEGIN{OFS=";"; print "ref:mise;name;operator;address;latitude;longitude"} {sub(/ +/,"",$9);sub(/ +/,"",$10)} NR>=3 && NF == 10 && $8 ~ /^(CH|PE|AQ|TE)$/ && $9 ~ /^[0-9]+\.[0-9]+$/ && $10 ~ /^[0-9]+\.[0-9]+$/{print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/abruzzo_impianti_attivi.csv
+          awk -F';' 'BEGIN{OFS=";"; print "ref:mise;name;operator;address;latitude;longitude"} {sub(/ +/,"",$9);sub(/ +/,"",$10)} NR>=3 && NF == 10 && $8 ~ /^(CH|PE|AQ|TE)$/ && ( $9 ~ /[^0-9.]/ || $10 ~ /[^0-9.]$/ ) {print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/abruzzo_impianti_skipped.csv
       # push changes to GITHUB
       - name: push changes
         run: |
