@@ -6,7 +6,7 @@ name: Download CSV file and update repository CSV files
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '00 10 * * *'
+    - cron:  '30 07 * * *'
 
 
   # Allows you to run this workflow manually from the Actions tab
