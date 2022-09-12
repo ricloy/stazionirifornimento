@@ -1,4 +1,4 @@
-Estrazione del 2022-09-10
+Estrazione del 2022-09-11
 idImpianto;Gestore;Bandiera;Tipo Impianto;Nome Impianto;Indirizzo;Comune;Provincia;Latitudine;Longitudine
 53637;ODELLI LUCIA;Pompe Bianche;Stradale;;;NULL;NULL;NULL;NULL
 52829;ERRA NICOLA;Api-Ip;Stradale;;;NULL;NULL;40.7160385;14.9413282
@@ -380,10 +380,10 @@ idImpianto;Gestore;Bandiera;Tipo Impianto;Nome Impianto;Indirizzo;Comune;Provinc
 19708;SELF AREA ENI DI BRINCHI LEONARDO;Agip Eni;Stradale;SELF AREA ENI DI BRINCHI LEONARDO;VIA DELLA MONTAGNOLA 24 60127;ANCONA;AN;43.59871298389587;13.50843614907376
 45840;SERVIZIO METANO F.G. DI FALCETTA GIANCARLO;Pompe Bianche;Stradale;SERVIZIO METANO F.G. DI FALCETTA GIANCARLO;VIA DEL CARMINE 41 60126;ANCONA;AN;43.59452565511288;13.461375014378063
 48605;GOLDENGAS - SOCIETA' PER AZIONI;Shell;Stradale;STAZIONE DEL PINOCCHIO;STRADA VECCHIA DEL PINOCCHIO 18 60131;ANCONA;AN;43.58285519321931;13.499785620845962
-31587;stazione di servizio esso di Brinchi Leonardo;Esso;Stradale;stazione di servizio esso di Brinchi Leonardo;via metauro 45 d 60126;ANCONA;AN;43.60016942353077;13.449805676937103
 46068;SIMONETTI MARIO S.R.L.;Api-Ip;Stradale;Stazione di Servizio IP - Martiri della Resistenza;Via Martiri della Resistenza 50 60125;ANCONA;AN;43.609628833138196;13.51524293422699
 25535;SIMONETTI MARIO S.R.L.;Simonetti Petroli;Stradale;Stazione di Servizio IS - Ancona;VIA CRISTOFORO COLOMBO 104/B, 60127  ;ANCONA;AN;43.60012649389328;13.504981302922033
 37537;SIMONETTI MARIO S.R.L.;Pompe Bianche;Stradale;Stazione di Servizio Montesicuro;Via Montesicuro 49 60131;ANCONA;AN;43.552890474115785;13.460607496432658
+31587;stazione di servizio esso di Brinchi Leonardo;Esso;Stradale;stazione di servizio SHELL di Brinchi Leonardo;via metauro 45 d 60126;ANCONA;AN;43.60016942353077;13.449805676937103
 12294;stazione di servizio totalerg di Socci Stefano;Api-Ip;Stradale;stazione di servizio totalerg di Socci Stefano;VIA BRECCE BIANCHE 57 60131;ANCONA;AN;43.577187167836506;13.514938677246164
 48603;Stazione di servizo Eni Ancona Via Albertini;Shell;Stradale;Stazione di servizo Shell Ancona Via Albertini;Via Albertini zona industriale Baraccola  60131;ANCONA;AN;43.54987974796834;13.510965353372937
 49057;totalerg;Api-Ip;Stradale;totalerg;via flaminia 226 60126;ANCONA;AN;43.60966293884717;13.455928440861499
