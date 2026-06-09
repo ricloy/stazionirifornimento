@@ -42,13 +42,13 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Update Abruzzo files
         run: |
-          awk -F';' 'BEGIN{OFS=";"; print "ref:mise;name;operator;address;latitude;longitude"} {sub(/ +/,"",$9);sub(/ +/,"",$10)} NR>=3 && NF == 10 && $8 ~ /^(CH|PE|AQ|TE)$/ && $9 ~ /^[0-9]+\.[0-9]+$/ && $10 ~ /^[0-9]+\.[0-9]+$/{print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/Abruzzo/abruzzo_impianti_attivi.csv
-          awk -F';' 'BEGIN{OFS=";"; print "ref:mise;name;operator;address;latitude;longitude"} {sub(/ +/,"",$9);sub(/ +/,"",$10)} NR>=3 && NF == 10 && $8 ~ /^(CH|PE|AQ|TE)$/ && ( $9 ~ /[^0-9.]/ || $10 ~ /[^0-9.]$/ ) {print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/Abruzzo/abruzzo_impianti_skipped.csv
+          awk -F'|' 'BEGIN{OFS="|"; print "ref:mise|name|operator|address|latitude|longitude"} {sub(/ +/,"",$9);sub(/ +/,"",$10)} NR>=3 && NF == 10 && $8 ~ /^(CH|PE|AQ|TE)$/ && $9 ~ /^[0-9]+\.[0-9]+$/ && $10 ~ /^[0-9]+\.[0-9]+$/{print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/Abruzzo/abruzzo_impianti_attivi.csv
+          awk -F'|' 'BEGIN{OFS="|"; print "ref:mise|name|operator|address|latitude|longitude"} {sub(/ +/,"",$9);sub(/ +/,"",$10)} NR>=3 && NF == 10 && $8 ~ /^(CH|PE|AQ|TE)$/ && ( $9 ~ /[^0-9.]/ || $10 ~ /[^0-9.]$/ ) {print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/Abruzzo/abruzzo_impianti_skipped.csv
 
       - name: Update Toscana files
         run: |
-          awk -F';' 'BEGIN{OFS=";"; print "ref:mise;name;operator;address;latitude;longitude"} {sub(/ +/,"",$9);sub(/ +/,"",$10)} NR>=3 && NF == 10 && $8 ~ /^(AR|FI|GR|LI|LU|MS|PI|PO|PT|SI)$/ && $9 ~ /^[0-9]+\.[0-9]+$/ && $10 ~ /^[0-9]+\.[0-9]+$/{print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/Toscana/toscana_impianti_attivi.csv
-          awk -F';' 'BEGIN{OFS=";"; print "ref:mise;name;operator;address;latitude;longitude"} {sub(/ +/,"",$9);sub(/ +/,"",$10)} NR>=3 && NF == 10 && $8 ~ /^(AR|FI|GR|LI|LU|MS|PI|PO|PT|SI)$/ && ( $9 ~ /[^0-9.]/ || $10 ~ /[^0-9.]$/ ) {print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/Toscana/toscana_impianti_skipped.csv
+          awk -F'|' 'BEGIN{OFS="|"; print "ref:mise|name|operator|address|latitude|longitude"} {sub(/ +/,"",$9);sub(/ +/,"",$10)} NR>=3 && NF == 10 && $8 ~ /^(AR|FI|GR|LI|LU|MS|PI|PO|PT|SI)$/ && $9 ~ /^[0-9]+\.[0-9]+$/ && $10 ~ /^[0-9]+\.[0-9]+$/{print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/Toscana/toscana_impianti_attivi.csv
+          awk -F'|' 'BEGIN{OFS="|"; print "ref:mise|name|operator|address|latitude|longitude"} {sub(/ +/,"",$9);sub(/ +/,"",$10)} NR>=3 && NF == 10 && $8 ~ /^(AR|FI|GR|LI|LU|MS|PI|PO|PT|SI)$/ && ( $9 ~ /[^0-9.]/ || $10 ~ /[^0-9.]$/ ) {print $1,$5,$2,$6,$9,$10}' ./data/input/anagrafica_impianti_attivi.csv > ./data/output/Toscana/toscana_impianti_skipped.csv
 
       # push changes to GITHUB
       - name: push changes
