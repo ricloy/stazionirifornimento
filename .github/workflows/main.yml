@@ -31,8 +31,9 @@ jobs:
         
       - name: download CSV file from MISE
         run: |
-          wget --debug https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv -O ./data/input/anagrafica_impianti_attivi.csv
-          wget --debug https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv -O ./data/input/prezzo_alle_8.csv
+          ping -W10 -c 4 www.google.com
+          curl -o ./data/input/anagrafica_impianti_attivi.csv https://www.mimit.gov.it/images/exportCSV/anagrafica_impianti_attivi.csv
+          curl -o ./data/input/prezzo_alle_8.csv https://www.mimit.gov.it/images/exportCSV/prezzo_alle_8.csv
         
       - name: create output directories
         run: |
